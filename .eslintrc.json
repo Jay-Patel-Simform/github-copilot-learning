@@ -1,0 +1,40 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": ["react", "react-hooks", "@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "version": "19.1.0"
+    }
+  },
+  "rules": {
+    "react/prop-types": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-no-leaked-render": ["warn", { "validStrategies": ["ternary", "coerce"] }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/function-component-definition": [
+      "warn",
+      {
+        "namedComponents": "function-declaration",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/destructuring-assignment": ["warn", "always"],
+    "react/jsx-props-no-spreading": "off"
+  }
+}

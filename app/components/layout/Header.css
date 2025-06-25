@@ -1,0 +1,347 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 0 20px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.app-header-content {
+  display: flex;
+  align-items: center;
+  min-height: 64px;
+}
+
+.header-collapse-button {
+  margin-right: 16px;
+}
+
+.app-logo {
+  font-weight: bold;
+  font-size: 18px;
+  white-space: nowrap;
+  margin-right: 20px;
+}
+
+/* For dark theme compatibility */
+[data-theme='dark'] .app-header {
+  background-color: #141414;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Make menu items scale better on various screen sizes */
+.app-header .ant-menu {
+  flex-grow: 1;
+  justify-content: flex-end;
+  border: none;
+  background: transparent;
+}
+
+.app-header .ant-menu-item {
+  padding: 0 10px;
+  line-height: 46px;
+  height: 46px;
+}
+
+/* Desktop-specific menu link style */
+.desktop-menu-link.menu-link {
+  display: inline-flex;
+  height: 46px;
+  line-height: 46px;
+  padding: 0 5px;
+}
+
+.desktop-menu-link.menu-link span {
+  line-height: inherit;
+  vertical-align: middle;
+}
+
+/* Mobile-specific menu link style */
+.mobile-menu-link.menu-link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  line-height: normal;
+  padding: 5px 0;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0 10px;
+  }
+
+  .app-header-content {
+    flex: 1;
+  }
+
+  .app-logo {
+    font-size: 16px;
+  }
+
+  .app-header .ant-menu {
+    flex-basis: 100%;
+    margin-top: 0;
+    margin-bottom: 10px;
+    justify-content: flex-start;
+    border: none;
+    overflow-x: auto;
+  }
+}
+
+/* Small mobile view */
+@media (max-width: 480px) {
+  .app-header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+  }
+
+  .app-header-content {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .app-header .ant-menu {
+    justify-content: center;
+  }
+}
+
+/* Desktop menu specific styles */
+.desktop-menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Desktop menu specific overrides to fix icon height issues */
+.desktop-menu .ant-menu-item {
+  height: 100%;
+}
+
+.desktop-menu .ant-menu-item .anticon {
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.desktop-menu .ant-menu-title-content {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.desktop-menu .ant-menu-item-icon {
+  font-size: 14px;
+  vertical-align: middle;
+  height: auto;
+}
+
+.desktop-menu .menu-link {
+  display: inline-flex;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.desktop-menu .ant-menu-item .anticon + .ant-menu-title-content {
+  padding-left: 0;
+}
+
+.desktop-menu .menu-link span {
+  line-height: normal;
+  padding-top: 1px;
+}
+
+/* Fix vertical alignment in horizontal menu */
+.ant-menu-horizontal .ant-menu-item {
+  vertical-align: top;
+}
+
+/* Mobile drawer menu styles */
+.ant-drawer .ant-menu {
+  border-right: none;
+}
+
+.ant-drawer .ant-menu-item {
+  margin: 0;
+  padding-left: 24px;
+  height: auto;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.ant-drawer .ant-menu-item a {
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.88);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 4px 0;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.ant-drawer .ant-menu-item .anticon {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+/* Ensure the drawer text is visible in dark mode too */
+[data-theme='dark'] .ant-drawer .ant-menu-item a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Make header sticky at the top */
+.app-header.ant-layout-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 20px;
+}
+
+/* Menu link styling */
+.menu-link {
+  color: rgba(0, 0, 0, 0.88);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0 4px;
+}
+
+/* Mobile drawer specific link styles */
+.ant-drawer .menu-link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 8px;
+}
+
+/* Dark mode menu link */
+[data-theme='dark'] .menu-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Mobile drawer customization */
+.mobile-menu-drawer .ant-drawer-body {
+  padding: 0;
+}
+
+.mobile-menu-drawer .ant-menu {
+  background: #fff;
+}
+
+[data-theme='dark'] .mobile-menu-drawer .ant-menu {
+  background: #141414;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Ensure the drawer menu items have proper spacing and visibility */
+.ant-drawer .ant-menu-item-selected {
+  background-color: #e6f4ff;
+}
+
+[data-theme='dark'] .ant-drawer .ant-menu-item-selected {
+  background-color: #1f1f1f;
+}
+
+.ant-drawer .ant-menu-item-selected a {
+  color: #1677ff;
+}
+
+[data-theme='dark'] .ant-drawer .ant-menu-item-selected a {
+  color: #1890ff;
+}
+
+/* Fix for small screens to ensure content is visible */
+@media (max-width: 360px) {
+  .ant-drawer .ant-menu-item a {
+    font-size: 14px;
+    padding: 6px 0;
+  }
+
+  .ant-drawer .ant-drawer-title {
+    font-size: 16px;
+  }
+
+  /* Force text visibility on smallest screens */
+  .mobile-menu-drawer .menu-link {
+    color: #000000 !important;
+    font-weight: 600;
+    text-shadow: 0 0 0.1px rgba(0, 0, 0, 0.2);
+  }
+
+  [data-theme='dark'] .mobile-menu-drawer .menu-link {
+    color: #ffffff !important;
+    text-shadow: 0 0 0.1px rgba(255, 255, 255, 0.2);
+  }
+
+  /* Enhanced flex layout for drawer menu on very small screens */
+  .ant-drawer .ant-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 4px 24px;
+  }
+
+  .ant-drawer .ant-menu-item .ant-menu-title-content {
+    display: flex;
+    width: 100%;
+  }
+
+  .ant-drawer .ant-menu-item .menu-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .ant-drawer .ant-menu-item .menu-link span {
+    margin-left: 0;
+    white-space: normal;
+    line-height: 1.4;
+  }
+}
+
+/* Enhanced flex layout for drawer menu items */
+.mobile-menu-drawer .ant-menu-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;
+}
+
+.mobile-menu-drawer .ant-menu-title-content {
+  flex: 1;
+  display: flex;
+}
+
+/* Ensure proper icon alignment in menu items */
+.mobile-menu-drawer .ant-menu-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Mobile drawer menu specific styles */
+.mobile-drawer-menu.ant-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-drawer-menu .ant-menu-item {
+  display: flex;
+  align-items: center;
+  height: auto;
+  min-height: 45px;
+  padding: 8px 24px;
+}
+
+.mobile-drawer-menu .ant-menu-item-icon + .ant-menu-title-content {
+  margin-left: 10px;
+  flex: 1;
+}

@@ -1,0 +1,25 @@
+.layout {
+  min-height: 100vh;
+}
+
+.content {
+  padding: 0 50px;
+  margin-top: 16px;
+}
+
+.content-container {
+  background: #fff;
+  padding: 24px;
+  min-height: 280px;
+}
+
+.footer {
+  text-align: center;
+}
+
+/* For dark mode compatibility */
+@media (prefers-color-scheme: dark) {
+  .content-container {
+    background: #141414;
+  }
+}
