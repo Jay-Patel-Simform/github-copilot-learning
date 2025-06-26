@@ -67,7 +67,7 @@ export const AppHeader: React.FC<Readonly<{}>> = () => {
         icon: <AppstoreOutlined />,
         label: (
           <Link to="/buttons" className={linkClass}>
-            <span>Gradient Buttons</span>
+            <span>Components</span>
           </Link>
         ),
       },
