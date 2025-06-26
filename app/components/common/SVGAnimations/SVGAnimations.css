@@ -1,0 +1,295 @@
+/* SVG Animations Demo Styles */
+.svg-animation-demo {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.animation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.animation-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  background: #fafafa;
+  transition: box-shadow 0.3s ease;
+}
+
+.animation-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.animation-item h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+/* 1. Loading Spinner */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+.spinner-circle {
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+/* 2. Drawing Checkmark */
+.drawing-checkmark .check-circle {
+  stroke-dasharray: 157;
+  stroke-dashoffset: 157;
+  animation: draw-circle var(--animation-duration, 2s) ease-out forwards;
+}
+
+.drawing-checkmark .check-path {
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  animation: draw-check var(--animation-duration, 2s) ease-out 0.5s forwards;
+}
+
+@keyframes draw-circle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw-check {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* 3. Morphing Heart */
+.morphing-heart .heart-path {
+  animation: heartbeat 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(0.95);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  80% {
+    transform: scale(0.98);
+  }
+}
+
+/* 4. Bouncing Dots */
+.bouncing-dots .dot {
+  animation: bounce 1.4s ease-in-out infinite both;
+}
+
+.bouncing-dots .dot-1 {
+  animation-delay: -0.32s;
+}
+
+.bouncing-dots .dot-2 {
+  animation-delay: -0.16s;
+}
+
+.bouncing-dots .dot-3 {
+  animation-delay: 0s;
+}
+
+@keyframes bounce {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+}
+
+/* 5. Pulse Rings */
+.pulse-rings .pulse-ring {
+  animation: pulse 2s ease-out infinite;
+  opacity: 0;
+}
+
+.pulse-rings .pulse-ring-1 {
+  animation-delay: 0s;
+}
+
+.pulse-rings .pulse-ring-2 {
+  animation-delay: 0.5s;
+}
+
+.pulse-rings .pulse-ring-3 {
+  animation-delay: 1s;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+/* 6. Animated Wave */
+.animated-wave .wave-path {
+  animation: wave 2s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    d: path('M0,25 Q25,5 50,25 T100,25');
+  }
+  50% {
+    d: path('M0,25 Q25,45 50,25 T100,25');
+  }
+}
+
+/* 7. Rotating Gear */
+.rotating-gear {
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 8. Typewriter Text */
+.typewriter-text .typing-text {
+  animation: typing 3s steps(11) infinite;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.typewriter-text .cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 9. Floating Elements */
+.floating-icons .floating-element {
+  animation: float 3s ease-in-out infinite;
+}
+
+.floating-icons .floating-1 {
+  animation-delay: 0s;
+}
+
+.floating-icons .floating-2 {
+  animation-delay: 0.5s;
+}
+
+.floating-icons .floating-3 {
+  animation-delay: 1s;
+}
+
+.floating-icons .floating-4 {
+  animation-delay: 1.5s;
+}
+
+.floating-icons .floating-5 {
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(270deg);
+  }
+}
+
+/* 10. Progress Ring */
+.progress-ring .progress-circle {
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .animation-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .animation-item {
+    padding: 1rem;
+  }
+
+  .svg-animation-demo {
+    padding: 1rem;
+  }
+}

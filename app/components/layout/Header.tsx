@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Layout, Menu, Button, Drawer } from 'antd';
-import { MenuOutlined, UserOutlined, HomeOutlined, AppstoreOutlined } from '@ant-design/icons';
+import {
+  MenuOutlined,
+  UserOutlined,
+  HomeOutlined,
+  AppstoreOutlined,
+  ThunderboltOutlined,
+} from '@ant-design/icons';
 import { Link } from 'react-router';
 import './Header.css';
 
@@ -73,6 +79,15 @@ export const AppHeader: React.FC<Readonly<{}>> = () => {
       },
       {
         key: '3',
+        icon: <ThunderboltOutlined />,
+        label: (
+          <Link to="/animations" className={linkClass}>
+            <span>Animations</span>
+          </Link>
+        ),
+      },
+      {
+        key: '4',
         icon: <UserOutlined />,
         label: (
           <Link to="/profile" className={linkClass}>
