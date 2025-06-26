@@ -6,6 +6,8 @@ import {
   HomeOutlined,
   AppstoreOutlined,
   ThunderboltOutlined,
+  ApartmentOutlined,
+  BorderOutlined,
 } from '@ant-design/icons';
 import { Link } from 'react-router';
 import './Header.css';
@@ -88,6 +90,24 @@ export const AppHeader: React.FC<Readonly<{}>> = () => {
       },
       {
         key: '4',
+        icon: <BorderOutlined />,
+        label: (
+          <Link to="/masonry-grid" className={linkClass}>
+            <span>Masonry Grid</span>
+          </Link>
+        ),
+      },
+      {
+        key: '5',
+        icon: <ApartmentOutlined />,
+        label: (
+          <Link to="/stepper" className={linkClass}>
+            <span>Stepper</span>
+          </Link>
+        ),
+      },
+      {
+        key: '6',
         icon: <UserOutlined />,
         label: (
           <Link to="/profile" className={linkClass}>

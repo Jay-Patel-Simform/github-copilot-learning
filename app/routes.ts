@@ -4,4 +4,5 @@ export default [
   index('routes/home.tsx'),
   route('buttons', 'routes/buttons.tsx'),
   route('animations', 'routes/animations.tsx'),
+  route('masonry-grid', 'routes/masonry-grid.tsx'),
 ] satisfies RouteConfig;
