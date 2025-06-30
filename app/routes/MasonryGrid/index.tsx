@@ -24,6 +24,7 @@ export default function MasonryGrid() {
   const itemsRef = useRef<Map<string, HTMLDivElement | null>>(new Map());
   const [imagesLoaded, setImagesLoaded] = useState(new Set<string>());
   const [isComponentMounted, setIsComponentMounted] = useState(false);
+  console.log('🚀 ~ MasonryGrid ~ isComponentMounted:', isComponentMounted);
 
   function getMap() {
     return itemsRef.current;
@@ -72,15 +73,15 @@ export default function MasonryGrid() {
   // Check for already loaded images on mount
   useEffect(() => {
     setIsComponentMounted(true);
-    
+
     // Check if any images are already loaded (cached)
     const checkAlreadyLoadedImages = () => {
       const loadedKeys = new Set<string>();
-      
+
       sampleImages.forEach((imageUrl, idx) => {
         const key = imageUrl + idx;
         const element = itemsRef.current.get(key);
-        
+
         if (element) {
           const img = element.querySelector('img');
           if (img && img.complete && img.naturalHeight > 0) {
@@ -88,7 +89,7 @@ export default function MasonryGrid() {
           }
         }
       });
-      
+
       if (loadedKeys.size > 0) {
         setImagesLoaded(loadedKeys);
       }
@@ -96,7 +97,7 @@ export default function MasonryGrid() {
 
     // Small delay to ensure refs are set
     const timeoutId = setTimeout(checkAlreadyLoadedImages, 50);
-    
+
     return () => clearTimeout(timeoutId);
   }, []);
 

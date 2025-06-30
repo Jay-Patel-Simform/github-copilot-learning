@@ -14,7 +14,7 @@
 
 .masonry-item img {
   width: 100%;
-  height: auto;
   display: block;
   object-fit: cover;
+  overflow: hidden;
 }
