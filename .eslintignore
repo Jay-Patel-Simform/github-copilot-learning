@@ -1,0 +1,8 @@
+node_modules/
+build/
+dist/
+public/
+.git/
+*.config.js
+*.config.ts
+vite.config.ts
