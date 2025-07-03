@@ -37,18 +37,18 @@ const buttonVariants = cva(
       variant: {
         // Filled button (Primary) - matches Figma Style=Filled
         filled:
-          'bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-xs active:bg-primary/80 focus-visible:bg-primary/90 focus-visible:shadow-xs disabled:bg-neutral-12 disabled:text-neutral-40 disabled:opacity-[0.38] dark:disabled:bg-neutral-12 dark:disabled:text-neutral-40',
+          'bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-xs active:bg-primary/80 focus-visible:bg-primary/90 focus-visible:shadow-xs disabled:bg-muted disabled:text-muted-foreground disabled:opacity-[0.38]',
         // Outlined button - matches Figma Style=Outlined
         outlined:
-          'border border-primary bg-transparent text-primary hover:bg-primary/8 active:bg-primary/12 focus-visible:bg-primary/12 disabled:border-neutral-12 disabled:text-neutral-40 disabled:opacity-[0.38] dark:border-primary dark:hover:bg-primary/8 dark:disabled:border-neutral-24 dark:disabled:text-neutral-40',
+          'border border-primary bg-transparent text-primary hover:bg-primary/8 active:bg-primary/12 focus-visible:bg-primary/12 disabled:border-muted disabled:text-muted-foreground disabled:opacity-[0.38]',
         // Text button - matches Figma Style=Text
-        text: 'bg-transparent text-primary hover:bg-primary/8 active:bg-primary/12 focus-visible:bg-primary/12 disabled:text-neutral-40 disabled:opacity-[0.38] dark:hover:bg-primary/8 dark:disabled:text-neutral-40',
+        text: 'bg-transparent text-primary hover:bg-primary/8 active:bg-primary/12 focus-visible:bg-primary/12 disabled:text-muted-foreground disabled:opacity-[0.38]',
         // Elevated button - matches Figma Style=Elevated
         elevated:
-          'bg-surface text-primary shadow-xs hover:shadow-lg hover:bg-primary/8 active:bg-primary/12 focus-visible:bg-primary/12 disabled:bg-neutral-12 disabled:text-neutral-40 disabled:opacity-[0.38] disabled:shadow-none dark:bg-neutral-10 dark:hover:bg-primary/8 dark:disabled:bg-neutral-12 dark:disabled:text-neutral-40',
+          'bg-background text-primary shadow-xs hover:shadow-lg hover:bg-primary/8 active:bg-primary/12 focus-visible:bg-primary/12 disabled:bg-muted disabled:text-muted-foreground disabled:opacity-[0.38] disabled:shadow-none',
         // Destructive variant
         destructive:
-          'bg-destructive text-white hover:bg-destructive/90 active:bg-destructive/80 focus-visible:bg-destructive/90 disabled:bg-neutral-12 disabled:text-neutral-40 disabled:opacity-[0.38] dark:disabled:bg-neutral-12 dark:disabled:text-neutral-40',
+          'bg-destructive text-white hover:bg-destructive/90 active:bg-destructive/80 focus-visible:bg-destructive/90 disabled:bg-muted disabled:text-muted-foreground disabled:opacity-[0.38]',
       },
       size: {
         sm: 'h-8 px-3 gap-2 text-xs font-medium [&_svg]:size-4',
