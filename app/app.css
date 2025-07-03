@@ -62,6 +62,13 @@ body {
   /* Base Configuration */
   --radius: 0.625rem;
 
+  /* Border radius */
+  --radius-xs: 12px;
+  --radius-sm: 16px;
+  --radius-md: 24px;
+  --radius-lg: 32px;
+  --radius-xl: 40px;
+
   /* === SaasAble Spacing System === */
   /* Base unit: 8px */
   --space-0: 0px;
@@ -1304,4 +1311,21 @@ body {
 .py-1200 {
   padding-top: var(--space-1200);
   padding-bottom: var(--space-1200);
+}
+
+/* === Radius Utility Classes === */
+.rounded-xs {
+  border-radius: var(--radius-xs);
+}
+.rounded-sm {
+  border-radius: var(--radius-sm);
+}
+.rounded-md {
+  border-radius: var(--radius-md);
+}
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+.rounded-xl {
+  border-radius: var(--radius-xl);
 }
