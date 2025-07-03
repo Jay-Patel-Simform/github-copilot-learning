@@ -1329,3 +1329,67 @@ body {
 .rounded-xl {
   border-radius: var(--radius-xl);
 }
+
+/* === Shadow Utility Classes === */
+/* Based on SaasAble design system shadow values from Figma */
+.shadow-xs {
+  box-shadow:
+    0px 1px 6px 1px rgba(0, 0, 0, 0.12),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.03);
+}
+
+.shadow-sm {
+  box-shadow:
+    0px 1px 6px 1px rgba(0, 0, 0, 0.12),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.03);
+}
+
+.shadow-md {
+  box-shadow:
+    0px 1px 6px 1px rgba(0, 0, 0, 0.12),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.03);
+}
+
+.shadow-lg {
+  box-shadow:
+    0px 2px 6px 2px rgba(0, 0, 0, 0.15),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-none {
+  box-shadow: none;
+}
+
+/* === Color Utility Classes === */
+/* Neutral Colors */
+.bg-neutral-12 {
+  background-color: var(--neutral-12);
+}
+
+.bg-neutral-10 {
+  background-color: var(--neutral-10);
+}
+
+.bg-neutral-24 {
+  background-color: var(--neutral-24);
+}
+
+.text-neutral-40 {
+  color: var(--neutral-40);
+}
+
+.text-neutral-50 {
+  color: var(--neutral-50);
+}
+
+.text-neutral-60 {
+  color: var(--neutral-60);
+}
+
+.border-neutral-12 {
+  border-color: var(--neutral-12);
+}
+
+.border-neutral-24 {
+  border-color: var(--neutral-24);
+}
