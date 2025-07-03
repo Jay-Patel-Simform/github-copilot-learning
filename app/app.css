@@ -5,8 +5,10 @@
 
 @theme {
   --font-sans:
-    'Roboto', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-primary: 'Roboto', var(--font-sans);
+  --font-secondary: 'Roboto', var(--font-sans);
 }
 
 html,
@@ -57,11 +59,18 @@ body {
 }
 
 :root {
+  /* Base Configuration */
   --radius: 0.625rem;
 
-  /* SaasAble Color System - Light Mode */
-  /* Purple Primary Shades */
-  --purple-0: #000000;
+  /* === SaasAble Color System === */
+  /* Shared Color Values */
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-surface: #fffbfe;
+  --color-surface-variant: #f6edff;
+
+  /* Purple Primary Palette */
+  --purple-0: var(--color-black);
   --purple-10: #21005d;
   --purple-20: #381e72;
   --purple-30: #4f378b;
@@ -71,12 +80,12 @@ body {
   --purple-70: #b69df8;
   --purple-80: #d0bcff;
   --purple-90: #eaddff;
-  --purple-95: #f6edff;
-  --purple-99: #fffbfe;
-  --purple-100: #ffffff;
+  --purple-95: var(--color-surface-variant);
+  --purple-99: var(--color-surface);
+  --purple-100: var(--color-white);
 
-  /* Secondary Shades */
-  --secondary-0: #000000;
+  /* Secondary Color Palette */
+  --secondary-0: var(--color-black);
   --secondary-10: #1d192b;
   --secondary-20: #332d41;
   --secondary-30: #4a4458;
@@ -86,12 +95,12 @@ body {
   --secondary-70: #b0a7c0;
   --secondary-80: #ccc2dc;
   --secondary-90: #e8def8;
-  --secondary-95: #f6edff;
-  --secondary-99: #fffbfe;
-  --secondary-100: #ffffff;
+  --secondary-95: var(--color-surface-variant);
+  --secondary-99: var(--color-surface);
+  --secondary-100: var(--color-white);
 
-  /* Neutral Shades */
-  --neutral-0: #000000;
+  /* Neutral Color Palette */
+  --neutral-0: var(--color-black);
   --neutral-4: #0f0d13;
   --neutral-6: #141218;
   --neutral-10: #1d1b20;
@@ -113,11 +122,11 @@ body {
   --neutral-95: #f5eff7;
   --neutral-96: #f7f2fa;
   --neutral-98: #fef7ff;
-  --neutral-99: #fffbfe;
-  --neutral-100: #ffffff;
+  --neutral-99: var(--color-surface);
+  --neutral-100: var(--color-white);
 
-  /* Neutral Variant */
-  --neutral-variant-0: #000000;
+  /* Neutral Variant Palette */
+  --neutral-variant-0: var(--color-black);
   --neutral-variant-10: #1d1a22;
   --neutral-variant-20: #322f37;
   --neutral-variant-30: #49454f;
@@ -128,10 +137,10 @@ body {
   --neutral-variant-80: #cac4d0;
   --neutral-variant-90: #e7e0ec;
   --neutral-variant-95: #f5eefa;
-  --neutral-variant-99: #fffbfe;
-  --neutral-variant-100: #ffffff;
+  --neutral-variant-99: var(--color-surface);
+  --neutral-variant-100: var(--color-white);
 
-  /* Theme Colors - Light Mode */
+  /* === Theme Colors - Light Mode === */
   --background: var(--purple-99);
   --foreground: var(--neutral-10);
   --card: var(--purple-99);
@@ -150,11 +159,15 @@ body {
   --border: var(--neutral-90);
   --input: var(--neutral-90);
   --ring: var(--purple-40);
+
+  /* Chart Colors */
   --chart-1: var(--purple-40);
   --chart-2: var(--purple-50);
   --chart-3: var(--purple-60);
   --chart-4: var(--purple-70);
   --chart-5: var(--purple-80);
+
+  /* Sidebar Colors */
   --sidebar: var(--purple-95);
   --sidebar-foreground: var(--neutral-10);
   --sidebar-primary: var(--purple-40);
@@ -164,95 +177,50 @@ body {
   --sidebar-border: var(--neutral-90);
   --sidebar-ring: var(--purple-40);
 
-  /* SaasAble Typography System */
-  /* Font Family */
-  --font-primary: 'Roboto', var(--font-sans);
-  --font-secondary: 'Roboto', var(--font-sans);
+  /* === Typography System - Desktop (Default) === */
+  /* Heading Styles */
+  --heading-large: 400 57px/64px var(--font-primary);
+  --heading-large-spacing: -0.25px;
+  --heading-medium: 400 45px/52px var(--font-primary);
+  --heading-medium-spacing: 0px;
+  --heading-small: 400 36px/44px var(--font-primary);
+  --heading-small-spacing: 0px;
 
-  /* Typography Scale - Desktop (default) */
-  /* Headings */
-  --heading-large-size: 57px;
-  --heading-large-line-height: 64px;
-  --heading-large-letter-spacing: -0.25px;
-  --heading-large-weight: 400;
+  /* Display Styles */
+  --display-large: 400 32px/40px var(--font-primary);
+  --display-large-spacing: 0px;
+  --display-medium: 400 28px/36px var(--font-primary);
+  --display-medium-spacing: 0px;
+  --display-small: 400 24px/32px var(--font-primary);
+  --display-small-spacing: 0px;
 
-  --heading-medium-size: 45px;
-  --heading-medium-line-height: 52px;
-  --heading-medium-letter-spacing: 0px;
-  --heading-medium-weight: 400;
+  /* Paragraph Styles */
+  --paragraph-large: 400 22px/28px var(--font-primary);
+  --paragraph-large-spacing: 0px;
+  --paragraph-medium: 400 16px/24px var(--font-primary);
+  --paragraph-medium-spacing: 0.5px;
+  --paragraph-small: 400 14px/20px var(--font-primary);
+  --paragraph-small-spacing: 0.25px;
 
-  --heading-small-size: 36px;
-  --heading-small-line-height: 44px;
-  --heading-small-letter-spacing: 0px;
-  --heading-small-weight: 400;
+  /* Label Styles */
+  --label-large: 500 22px/28px var(--font-primary);
+  --label-large-spacing: 0px;
+  --label-medium: 500 16px/24px var(--font-primary);
+  --label-medium-spacing: 0.15px;
+  --label-small: 600 14px/20px var(--font-primary);
+  --label-small-spacing: 0.1px;
 
-  /* Display */
-  --display-large-size: 32px;
-  --display-large-line-height: 40px;
-  --display-large-letter-spacing: 0px;
-  --display-large-weight: 400;
-
-  --display-medium-size: 28px;
-  --display-medium-line-height: 36px;
-  --display-medium-letter-spacing: 0px;
-  --display-medium-weight: 400;
-
-  --display-small-size: 24px;
-  --display-small-line-height: 32px;
-  --display-small-letter-spacing: 0px;
-  --display-small-weight: 400;
-
-  /* Paragraph */
-  --paragraph-large-size: 22px;
-  --paragraph-large-line-height: 28px;
-  --paragraph-large-letter-spacing: 0px;
-  --paragraph-large-weight: 400;
-
-  --paragraph-medium-size: 16px;
-  --paragraph-medium-line-height: 24px;
-  --paragraph-medium-letter-spacing: 0.5px;
-  --paragraph-medium-weight: 400;
-
-  --paragraph-small-size: 14px;
-  --paragraph-small-line-height: 20px;
-  --paragraph-small-letter-spacing: 0.25px;
-  --paragraph-small-weight: 400;
-
-  /* Label */
-  --label-large-size: 22px;
-  --label-large-line-height: 28px;
-  --label-large-letter-spacing: 0px;
-  --label-large-weight: 500;
-
-  --label-medium-size: 16px;
-  --label-medium-line-height: 24px;
-  --label-medium-letter-spacing: 0.15px;
-  --label-medium-weight: 500;
-
-  --label-small-size: 14px;
-  --label-small-line-height: 20px;
-  --label-small-letter-spacing: 0.1px;
-  --label-small-weight: 600;
-
-  /* HyperLink */
-  --hyperlink-large-size: 16px;
-  --hyperlink-large-line-height: 24px;
-  --hyperlink-large-letter-spacing: 0.5px;
-  --hyperlink-large-weight: 400;
-
-  --hyperlink-medium-size: 14px;
-  --hyperlink-medium-line-height: 20px;
-  --hyperlink-medium-letter-spacing: 0.1px;
-  --hyperlink-medium-weight: 500;
-
-  --hyperlink-small-size: 12px;
-  --hyperlink-small-line-height: 16px;
-  --hyperlink-small-letter-spacing: 0px;
-  --hyperlink-small-weight: 600;
+  /* Hyperlink Styles */
+  --hyperlink-large: 400 16px/24px var(--font-primary);
+  --hyperlink-large-spacing: 0.5px;
+  --hyperlink-medium: 500 14px/20px var(--font-primary);
+  --hyperlink-medium-spacing: 0.1px;
+  --hyperlink-small: 600 12px/16px var(--font-primary);
+  --hyperlink-small-spacing: 0px;
 }
 
 .dark {
-  /* Theme Colors - Dark Mode */
+  /* === Theme Colors - Dark Mode === */
   --background: var(--neutral-6);
   --foreground: var(--neutral-90);
   --card: var(--neutral-10);
@@ -271,11 +239,15 @@ body {
   --border: var(--neutral-24);
   --input: var(--neutral-24);
   --ring: var(--purple-80);
+
+  /* Chart Colors */
   --chart-1: var(--purple-80);
   --chart-2: var(--purple-70);
   --chart-3: var(--purple-60);
   --chart-4: var(--purple-50);
   --chart-5: var(--purple-40);
+
+  /* Sidebar Colors */
   --sidebar: var(--neutral-10);
   --sidebar-foreground: var(--neutral-90);
   --sidebar-primary: var(--purple-80);
@@ -286,68 +258,34 @@ body {
   --sidebar-ring: var(--purple-80);
 }
 
-/* Responsive Typography Media Queries */
+/* === Responsive Typography === */
 @media (max-width: 1024px) {
   :root {
     /* Tablet Typography Overrides */
-    --heading-large-size: 45px;
-    --heading-large-line-height: 52px;
-
-    --heading-medium-size: 36px;
-    --heading-medium-line-height: 44px;
-
-    --heading-small-size: 24px;
-    --heading-small-line-height: 32px;
-
-    --display-large-size: 28px;
-    --display-large-line-height: 36px;
-
-    --display-medium-size: 24px;
-    --display-medium-line-height: 32px;
-
-    --display-small-size: 20px;
-    --display-small-line-height: 28px;
-
-    --paragraph-large-size: 16px;
-    --paragraph-large-line-height: 24px;
-
-    --paragraph-medium-size: 14px;
-    --paragraph-medium-line-height: 20px;
-
-    --paragraph-small-size: 12px;
-    --paragraph-small-line-height: 18px;
+    --heading-large: 400 45px/52px var(--font-primary);
+    --heading-medium: 400 36px/44px var(--font-primary);
+    --heading-small: 400 24px/32px var(--font-primary);
+    --display-large: 400 28px/36px var(--font-primary);
+    --display-medium: 400 24px/32px var(--font-primary);
+    --display-small: 400 20px/28px var(--font-primary);
+    --paragraph-large: 400 16px/24px var(--font-primary);
+    --paragraph-medium: 400 14px/20px var(--font-primary);
+    --paragraph-small: 400 12px/18px var(--font-primary);
   }
 }
 
 @media (max-width: 768px) {
   :root {
     /* Mobile Typography Overrides */
-    --heading-large-size: 32px;
-    --heading-large-line-height: 40px;
-
-    --heading-medium-size: 24px;
-    --heading-medium-line-height: 32px;
-
-    --heading-small-size: 20px;
-    --heading-small-line-height: 28px;
-
-    --display-large-size: 24px;
-    --display-large-line-height: 32px;
-
-    --display-medium-size: 20px;
-    --display-medium-line-height: 28px;
-
-    --display-small-size: 16px;
-    --display-small-line-height: 24px;
-
-    --paragraph-large-size: 16px;
-    --paragraph-large-line-height: 24px;
-
-    --paragraph-medium-size: 16px;
-    --paragraph-medium-line-height: 20px;
-
-    --paragraph-small-size: 12px;
-    --paragraph-small-line-height: 18px;
+    --heading-large: 400 32px/40px var(--font-primary);
+    --heading-medium: 400 24px/32px var(--font-primary);
+    --heading-small: 400 20px/28px var(--font-primary);
+    --display-large: 400 24px/32px var(--font-primary);
+    --display-medium: 400 20px/28px var(--font-primary);
+    --display-small: 400 16px/24px var(--font-primary);
+    --paragraph-large: 400 16px/24px var(--font-primary);
+    --paragraph-medium: 400 16px/20px var(--font-primary);
+    --paragraph-small: 400 12px/18px var(--font-primary);
   }
 }
 
@@ -360,123 +298,78 @@ body {
   }
 }
 
-/* SaasAble Typography Utility Classes */
+/* === Typography Utility Classes === */
 .heading-large {
-  font-family: var(--font-primary);
-  font-size: var(--heading-large-size);
-  line-height: var(--heading-large-line-height);
-  letter-spacing: var(--heading-large-letter-spacing);
-  font-weight: var(--heading-large-weight);
+  font: var(--heading-large);
+  letter-spacing: var(--heading-large-spacing);
 }
 
 .heading-medium {
-  font-family: var(--font-primary);
-  font-size: var(--heading-medium-size);
-  line-height: var(--heading-medium-line-height);
-  letter-spacing: var(--heading-medium-letter-spacing);
-  font-weight: var(--heading-medium-weight);
+  font: var(--heading-medium);
+  letter-spacing: var(--heading-medium-spacing);
 }
 
 .heading-small {
-  font-family: var(--font-primary);
-  font-size: var(--heading-small-size);
-  line-height: var(--heading-small-line-height);
-  letter-spacing: var(--heading-small-letter-spacing);
-  font-weight: var(--heading-small-weight);
+  font: var(--heading-small);
+  letter-spacing: var(--heading-small-spacing);
 }
 
 .display-large {
-  font-family: var(--font-primary);
-  font-size: var(--display-large-size);
-  line-height: var(--display-large-line-height);
-  letter-spacing: var(--display-large-letter-spacing);
-  font-weight: var(--display-large-weight);
+  font: var(--display-large);
+  letter-spacing: var(--display-large-spacing);
 }
 
 .display-medium {
-  font-family: var(--font-primary);
-  font-size: var(--display-medium-size);
-  line-height: var(--display-medium-line-height);
-  letter-spacing: var(--display-medium-letter-spacing);
-  font-weight: var(--display-medium-weight);
+  font: var(--display-medium);
+  letter-spacing: var(--display-medium-spacing);
 }
 
 .display-small {
-  font-family: var(--font-primary);
-  font-size: var(--display-small-size);
-  line-height: var(--display-small-line-height);
-  letter-spacing: var(--display-small-letter-spacing);
-  font-weight: var(--display-small-weight);
+  font: var(--display-small);
+  letter-spacing: var(--display-small-spacing);
 }
 
 .paragraph-large {
-  font-family: var(--font-primary);
-  font-size: var(--paragraph-large-size);
-  line-height: var(--paragraph-large-line-height);
-  letter-spacing: var(--paragraph-large-letter-spacing);
-  font-weight: var(--paragraph-large-weight);
+  font: var(--paragraph-large);
+  letter-spacing: var(--paragraph-large-spacing);
 }
 
 .paragraph-medium {
-  font-family: var(--font-primary);
-  font-size: var(--paragraph-medium-size);
-  line-height: var(--paragraph-medium-line-height);
-  letter-spacing: var(--paragraph-medium-letter-spacing);
-  font-weight: var(--paragraph-medium-weight);
+  font: var(--paragraph-medium);
+  letter-spacing: var(--paragraph-medium-spacing);
 }
 
 .paragraph-small {
-  font-family: var(--font-primary);
-  font-size: var(--paragraph-small-size);
-  line-height: var(--paragraph-small-line-height);
-  letter-spacing: var(--paragraph-small-letter-spacing);
-  font-weight: var(--paragraph-small-weight);
+  font: var(--paragraph-small);
+  letter-spacing: var(--paragraph-small-spacing);
 }
 
 .label-large {
-  font-family: var(--font-primary);
-  font-size: var(--label-large-size);
-  line-height: var(--label-large-line-height);
-  letter-spacing: var(--label-large-letter-spacing);
-  font-weight: var(--label-large-weight);
+  font: var(--label-large);
+  letter-spacing: var(--label-large-spacing);
 }
 
 .label-medium {
-  font-family: var(--font-primary);
-  font-size: var(--label-medium-size);
-  line-height: var(--label-medium-line-height);
-  letter-spacing: var(--label-medium-letter-spacing);
-  font-weight: var(--label-medium-weight);
+  font: var(--label-medium);
+  letter-spacing: var(--label-medium-spacing);
 }
 
 .label-small {
-  font-family: var(--font-primary);
-  font-size: var(--label-small-size);
-  line-height: var(--label-small-line-height);
-  letter-spacing: var(--label-small-letter-spacing);
-  font-weight: var(--label-small-weight);
+  font: var(--label-small);
+  letter-spacing: var(--label-small-spacing);
 }
 
 .hyperlink-large {
-  font-family: var(--font-primary);
-  font-size: var(--hyperlink-large-size);
-  line-height: var(--hyperlink-large-line-height);
-  letter-spacing: var(--hyperlink-large-letter-spacing);
-  font-weight: var(--hyperlink-large-weight);
+  font: var(--hyperlink-large);
+  letter-spacing: var(--hyperlink-large-spacing);
 }
 
 .hyperlink-medium {
-  font-family: var(--font-primary);
-  font-size: var(--hyperlink-medium-size);
-  line-height: var(--hyperlink-medium-line-height);
-  letter-spacing: var(--hyperlink-medium-letter-spacing);
-  font-weight: var(--hyperlink-medium-weight);
+  font: var(--hyperlink-medium);
+  letter-spacing: var(--hyperlink-medium-spacing);
 }
 
 .hyperlink-small {
-  font-family: var(--font-primary);
-  font-size: var(--hyperlink-small-size);
-  line-height: var(--hyperlink-small-line-height);
-  letter-spacing: var(--hyperlink-small-letter-spacing);
-  font-weight: var(--hyperlink-small-weight);
+  font: var(--hyperlink-small);
+  letter-spacing: var(--hyperlink-small-spacing);
 }
