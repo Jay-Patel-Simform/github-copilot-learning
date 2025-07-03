@@ -5,7 +5,7 @@
 
 @theme {
   --font-sans:
-    'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Roboto', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
@@ -163,6 +163,92 @@ body {
   --sidebar-accent-foreground: var(--purple-10);
   --sidebar-border: var(--neutral-90);
   --sidebar-ring: var(--purple-40);
+
+  /* SaasAble Typography System */
+  /* Font Family */
+  --font-primary: 'Roboto', var(--font-sans);
+  --font-secondary: 'Roboto', var(--font-sans);
+
+  /* Typography Scale - Desktop (default) */
+  /* Headings */
+  --heading-large-size: 57px;
+  --heading-large-line-height: 64px;
+  --heading-large-letter-spacing: -0.25px;
+  --heading-large-weight: 400;
+
+  --heading-medium-size: 45px;
+  --heading-medium-line-height: 52px;
+  --heading-medium-letter-spacing: 0px;
+  --heading-medium-weight: 400;
+
+  --heading-small-size: 36px;
+  --heading-small-line-height: 44px;
+  --heading-small-letter-spacing: 0px;
+  --heading-small-weight: 400;
+
+  /* Display */
+  --display-large-size: 32px;
+  --display-large-line-height: 40px;
+  --display-large-letter-spacing: 0px;
+  --display-large-weight: 400;
+
+  --display-medium-size: 28px;
+  --display-medium-line-height: 36px;
+  --display-medium-letter-spacing: 0px;
+  --display-medium-weight: 400;
+
+  --display-small-size: 24px;
+  --display-small-line-height: 32px;
+  --display-small-letter-spacing: 0px;
+  --display-small-weight: 400;
+
+  /* Paragraph */
+  --paragraph-large-size: 22px;
+  --paragraph-large-line-height: 28px;
+  --paragraph-large-letter-spacing: 0px;
+  --paragraph-large-weight: 400;
+
+  --paragraph-medium-size: 16px;
+  --paragraph-medium-line-height: 24px;
+  --paragraph-medium-letter-spacing: 0.5px;
+  --paragraph-medium-weight: 400;
+
+  --paragraph-small-size: 14px;
+  --paragraph-small-line-height: 20px;
+  --paragraph-small-letter-spacing: 0.25px;
+  --paragraph-small-weight: 400;
+
+  /* Label */
+  --label-large-size: 22px;
+  --label-large-line-height: 28px;
+  --label-large-letter-spacing: 0px;
+  --label-large-weight: 500;
+
+  --label-medium-size: 16px;
+  --label-medium-line-height: 24px;
+  --label-medium-letter-spacing: 0.15px;
+  --label-medium-weight: 500;
+
+  --label-small-size: 14px;
+  --label-small-line-height: 20px;
+  --label-small-letter-spacing: 0.1px;
+  --label-small-weight: 600;
+
+  /* HyperLink */
+  --hyperlink-large-size: 16px;
+  --hyperlink-large-line-height: 24px;
+  --hyperlink-large-letter-spacing: 0.5px;
+  --hyperlink-large-weight: 400;
+
+  --hyperlink-medium-size: 14px;
+  --hyperlink-medium-line-height: 20px;
+  --hyperlink-medium-letter-spacing: 0.1px;
+  --hyperlink-medium-weight: 500;
+
+  --hyperlink-small-size: 12px;
+  --hyperlink-small-line-height: 16px;
+  --hyperlink-small-letter-spacing: 0px;
+  --hyperlink-small-weight: 600;
 }
 
 .dark {
@@ -200,6 +286,71 @@ body {
   --sidebar-ring: var(--purple-80);
 }
 
+/* Responsive Typography Media Queries */
+@media (max-width: 1024px) {
+  :root {
+    /* Tablet Typography Overrides */
+    --heading-large-size: 45px;
+    --heading-large-line-height: 52px;
+
+    --heading-medium-size: 36px;
+    --heading-medium-line-height: 44px;
+
+    --heading-small-size: 24px;
+    --heading-small-line-height: 32px;
+
+    --display-large-size: 28px;
+    --display-large-line-height: 36px;
+
+    --display-medium-size: 24px;
+    --display-medium-line-height: 32px;
+
+    --display-small-size: 20px;
+    --display-small-line-height: 28px;
+
+    --paragraph-large-size: 16px;
+    --paragraph-large-line-height: 24px;
+
+    --paragraph-medium-size: 14px;
+    --paragraph-medium-line-height: 20px;
+
+    --paragraph-small-size: 12px;
+    --paragraph-small-line-height: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    /* Mobile Typography Overrides */
+    --heading-large-size: 32px;
+    --heading-large-line-height: 40px;
+
+    --heading-medium-size: 24px;
+    --heading-medium-line-height: 32px;
+
+    --heading-small-size: 20px;
+    --heading-small-line-height: 28px;
+
+    --display-large-size: 24px;
+    --display-large-line-height: 32px;
+
+    --display-medium-size: 20px;
+    --display-medium-line-height: 28px;
+
+    --display-small-size: 16px;
+    --display-small-line-height: 24px;
+
+    --paragraph-large-size: 16px;
+    --paragraph-large-line-height: 24px;
+
+    --paragraph-medium-size: 16px;
+    --paragraph-medium-line-height: 20px;
+
+    --paragraph-small-size: 12px;
+    --paragraph-small-line-height: 18px;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -207,4 +358,125 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* SaasAble Typography Utility Classes */
+.heading-large {
+  font-family: var(--font-primary);
+  font-size: var(--heading-large-size);
+  line-height: var(--heading-large-line-height);
+  letter-spacing: var(--heading-large-letter-spacing);
+  font-weight: var(--heading-large-weight);
+}
+
+.heading-medium {
+  font-family: var(--font-primary);
+  font-size: var(--heading-medium-size);
+  line-height: var(--heading-medium-line-height);
+  letter-spacing: var(--heading-medium-letter-spacing);
+  font-weight: var(--heading-medium-weight);
+}
+
+.heading-small {
+  font-family: var(--font-primary);
+  font-size: var(--heading-small-size);
+  line-height: var(--heading-small-line-height);
+  letter-spacing: var(--heading-small-letter-spacing);
+  font-weight: var(--heading-small-weight);
+}
+
+.display-large {
+  font-family: var(--font-primary);
+  font-size: var(--display-large-size);
+  line-height: var(--display-large-line-height);
+  letter-spacing: var(--display-large-letter-spacing);
+  font-weight: var(--display-large-weight);
+}
+
+.display-medium {
+  font-family: var(--font-primary);
+  font-size: var(--display-medium-size);
+  line-height: var(--display-medium-line-height);
+  letter-spacing: var(--display-medium-letter-spacing);
+  font-weight: var(--display-medium-weight);
+}
+
+.display-small {
+  font-family: var(--font-primary);
+  font-size: var(--display-small-size);
+  line-height: var(--display-small-line-height);
+  letter-spacing: var(--display-small-letter-spacing);
+  font-weight: var(--display-small-weight);
+}
+
+.paragraph-large {
+  font-family: var(--font-primary);
+  font-size: var(--paragraph-large-size);
+  line-height: var(--paragraph-large-line-height);
+  letter-spacing: var(--paragraph-large-letter-spacing);
+  font-weight: var(--paragraph-large-weight);
+}
+
+.paragraph-medium {
+  font-family: var(--font-primary);
+  font-size: var(--paragraph-medium-size);
+  line-height: var(--paragraph-medium-line-height);
+  letter-spacing: var(--paragraph-medium-letter-spacing);
+  font-weight: var(--paragraph-medium-weight);
+}
+
+.paragraph-small {
+  font-family: var(--font-primary);
+  font-size: var(--paragraph-small-size);
+  line-height: var(--paragraph-small-line-height);
+  letter-spacing: var(--paragraph-small-letter-spacing);
+  font-weight: var(--paragraph-small-weight);
+}
+
+.label-large {
+  font-family: var(--font-primary);
+  font-size: var(--label-large-size);
+  line-height: var(--label-large-line-height);
+  letter-spacing: var(--label-large-letter-spacing);
+  font-weight: var(--label-large-weight);
+}
+
+.label-medium {
+  font-family: var(--font-primary);
+  font-size: var(--label-medium-size);
+  line-height: var(--label-medium-line-height);
+  letter-spacing: var(--label-medium-letter-spacing);
+  font-weight: var(--label-medium-weight);
+}
+
+.label-small {
+  font-family: var(--font-primary);
+  font-size: var(--label-small-size);
+  line-height: var(--label-small-line-height);
+  letter-spacing: var(--label-small-letter-spacing);
+  font-weight: var(--label-small-weight);
+}
+
+.hyperlink-large {
+  font-family: var(--font-primary);
+  font-size: var(--hyperlink-large-size);
+  line-height: var(--hyperlink-large-line-height);
+  letter-spacing: var(--hyperlink-large-letter-spacing);
+  font-weight: var(--hyperlink-large-weight);
+}
+
+.hyperlink-medium {
+  font-family: var(--font-primary);
+  font-size: var(--hyperlink-medium-size);
+  line-height: var(--hyperlink-medium-line-height);
+  letter-spacing: var(--hyperlink-medium-letter-spacing);
+  font-weight: var(--hyperlink-medium-weight);
+}
+
+.hyperlink-small {
+  font-family: var(--font-primary);
+  font-size: var(--hyperlink-small-size);
+  line-height: var(--hyperlink-small-line-height);
+  letter-spacing: var(--hyperlink-small-letter-spacing);
+  font-weight: var(--hyperlink-small-weight);
 }
