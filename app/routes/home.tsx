@@ -1,5 +1,5 @@
 import { Button } from '~/components/ui/button';
-import Header from '~/components/header';
+import { Header } from '~/components/Header';
 
 // Simple icon component for demonstration
 const PlusIcon = () => (
