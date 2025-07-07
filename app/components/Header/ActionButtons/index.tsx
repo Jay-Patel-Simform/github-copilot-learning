@@ -13,16 +13,17 @@ export const ActionButtons = ({
 }: ActionButtonsProps) => {
   const isTablet = variant === 'tablet';
   const isMobile = variant === 'mobile';
+  const isDesktop = variant === 'desktop';
 
   return (
     <div className={`flex items-center gap-3  ${className}`}>
       <LanguageSelector
-        size={variant === 'desktop' ? 'sm' : 'md'}
+        size={isDesktop ? 'md' : 'sm'}
         className={isMobile ? 'w-full' : ''}
       />
       <Button
         variant="filled"
-        size="sm"
+        size={isDesktop ? 'md' : 'sm'}
         className={`transition-all duration-200 hover:scale-[1.02] focus:scale-[1.02] ${isMobile ? 'w-full' : ''} ${isTablet ? 'px-6 py-2.5' : ''}`}
       >
         Get Started

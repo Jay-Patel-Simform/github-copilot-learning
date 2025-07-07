@@ -24,13 +24,13 @@ export const LanguageSelector = ({
 }: LanguageSelectorProps) => {
   const sizeClasses = {
     sm: 'h-auto px-4 py-2 min-w-[80px]',
-    md: 'h-10 px-4',
+    md: 'h-10! px-4',
   };
 
   return (
     <Select>
       <SelectTrigger
-        className={`${sizeClasses[size]} transition-all duration-200 hover:scale-[1.02] focus:scale-[1.02] border border-primary bg-transparent !text-primary hover:bg-primary/8 active:bg-primary/12 focus-visible:bg-primary/12 font-semibold rounded-full ${className}`}
+        className={`transition-all duration-200 hover:scale-[1.02] focus:scale-[1.02] border border-primary bg-transparent !text-primary hover:bg-primary/8 active:bg-primary/12 focus-visible:bg-primary/12 font-semibold rounded-full ${className} ${sizeClasses[size]}`}
       >
         <SelectValue placeholder="ENG" />
       </SelectTrigger>

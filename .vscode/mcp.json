@@ -4,7 +4,7 @@
       "command": "bash",
       "args": [
         "-c",
-        "source .env && npx -y figma-developer-mcp --figma-api-key=\"$FIGMA_ACCESS_TOKEN\" --stdio"
+        "source .env.example && npx -y figma-developer-mcp --figma-api-key=\"$FIGMA_ACCESS_TOKEN\" --stdio"
       ]
     }
   }
